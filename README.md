@@ -15,6 +15,7 @@ For the purposes of this test, I am assuming that:
  * Creating the app from scratch is preferred to using Create React App or similar. 
  * The app should work in a variety of browsers.
  * API calls should be mocked for faster testing and to avoid any potential issues with the backend. 
+ * If a product does not have a title or a price, it should not be shown.
 
  ### Notes
 

@@ -25,17 +25,23 @@ describe('ProductGrid', () => {
         await act(async () => {
            wrapper = render(<ProductGrid />);
         })        
-        expect( wrapper.container.firstChild ).toBeEmptyDOMElement();
+        expect( wrapper.container.firstChild ).toHaveTextContent('Dishwashers (0)');
     });
 
     it('calls containts GridProduct if results available', async() => {
         api.getProductGrid = jest.fn().mockImplementation(() => {
             return [{
                 productId: 1001,
-                title: 'Unit test'
+                title: 'Unit test',
+                price: {
+                    now: '123'
+                }
             },{
                 productId: 1002,
-                title: 'Unit test 2'
+                title: 'Unit test 2',
+                price: {
+                    now: '99'
+                }
             }];
         });
 

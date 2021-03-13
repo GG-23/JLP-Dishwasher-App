@@ -1,0 +1,21 @@
+.product {
+    background-color: $background;
+    border-bottom: 1px solid $border;
+    border-right: 1px solid $border;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px 44px 44px;
+    width: 25%;
+
+    img {
+        align-self: center;
+        height: auto;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .price{
+        font-weight: 400;
+    }
+}

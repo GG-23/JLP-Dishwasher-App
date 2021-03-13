@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1615648606041" clover="3.2.0">
-  <project timestamp="1615648606041" name="All files">
-    <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7" elements="21" coveredelements="21" complexity="0" loc="14" ncloc="14" packages="3" files="3" classes="3"/>
+<coverage generated="1615654660351" clover="3.2.0">
+  <project timestamp="1615654660351" name="All files">
+    <metrics statements="15" coveredstatements="15" conditionals="5" coveredconditionals="5" methods="7" coveredmethods="7" elements="27" coveredelements="27" complexity="0" loc="15" ncloc="15" packages="3" files="3" classes="3"/>
     <package name="api">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="productGrid.js" path="/Users/greg/Documents/dev/JLP-Dishwasher-App/src/api/productGrid.js">
@@ -13,12 +13,13 @@
       </file>
     </package>
     <package name="components">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="4" coveredstatements="4" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
       <file name="GridProduct.jsx" path="/Users/greg/Documents/dev/JLP-Dishwasher-App/src/components/GridProduct.jsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="5" count="2" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="6" type="cond" truecount="5" falsecount="0"/>
         <line num="7" count="3" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
       </file>
     </package>
     <package name="containers">
@@ -31,7 +32,7 @@
         <line num="10" count="3" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
         <line num="14" count="6" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
       </file>
     </package>
   </project>

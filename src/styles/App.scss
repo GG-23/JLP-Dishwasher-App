@@ -1,0 +1,29 @@
+
+$background: #F9F9F9;
+$border: #DFDCD3;
+$h1: #727270;
+
+* {
+    box-sizing: border-box;
+    font-family: 'Gill Sans';
+    font-weight: 100;
+}
+
+
+body {
+    background-color: $background;
+    margin: 0;
+}
+
+h1 { 
+    border-bottom: 1px solid $border;
+    color: $h1;
+    margin: 0;
+    padding: 50px 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+@import './GridProduct.scss';
+@import './ProductGrid.scss';

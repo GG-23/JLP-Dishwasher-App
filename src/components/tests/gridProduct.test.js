@@ -7,9 +7,71 @@ import GridProduct from '../GridProduct';
 
 describe('GridProduct', () => {
 
+    it('returns null if no productId provided', () => {    
 
-    it('renders GridProduct', () => {    
-        const wrapper = render(<GridProduct />);
-        expect( wrapper.container.firstChild ).toHaveClass('product')
-    })
+        const product = {
+            title: 'Test Product',
+            price: {
+                now: '123.00'                
+            },
+            image: 'http://animageofadishwasher.png/'
+        };        
+
+        const wrapper = render(<GridProduct {...product} />);
+        expect( wrapper.container.firstChild ).toBeNull();
+    });
+
+    it('returns null if no title provided', () => {    
+
+        const product = {
+            productId: '1234',
+            price: {
+                now: '123.00'                
+            },
+            image: 'http://animageofadishwasher.png/'
+        };        
+
+        const wrapper = render(<GridProduct {...product} />);
+        expect( wrapper.container.firstChild ).toBeNull();
+    });
+
+    it('returns null if no price provided', () => {   
+
+        const product = {
+            productId: '1234',
+            title: 'Test Product',
+            image: 'http://animageofadishwasher.png/'
+        };  
+
+        const wrapper = render(<GridProduct  {...product}/>);
+        expect( wrapper.container.firstChild ).toBeNull();
+    });
+    
+    
+    it('renders GridProduct if required props provided', () => {    
+
+        const product = {
+            productId: '1234',
+            title: 'Test Product',
+            price: {
+                now: '123.00'                
+            },
+            image: 'http://animageofadishwasher.png/'
+        };
+        
+        const wrapper = render(<GridProduct {...product} />);
+        expect( wrapper.container.firstChild ).toHaveClass('product');
+
+        const image = wrapper.getByRole('img');
+        expect(image).toHaveAttribute('src');
+        expect(image.src).toBe(product.image);
+
+        const title = wrapper.getAllByText(product.title);
+        expect( title ).toHaveLength(1);
+
+        const price = wrapper.getAllByText('£'+product.price.now);
+        expect( price ).toHaveLength(1);
+    });
+    
+
 });

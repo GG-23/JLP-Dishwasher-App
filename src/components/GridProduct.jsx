@@ -1,28 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 
 const GridProduct = ({productId, price, title, image}) => {
 
-    return <div className='product'>
-       
+    if( !productId || !title || !price ) {
+        return null;
+    }
 
+    return <div className='product'>
+        <img src={image} alt={title} />
+        <div>{title}</div>
+        <div className='price'>£{price.now}</div>
     </div>
 };
-
-GridProduct.propTypes = {
-    id: PropTypes.string,
-    price: PropTypes.shape({
-        was: PropTypes.string,
-        then1: PropTypes.string,
-        then2: PropTypes.string,
-        now: PropTypes.string,
-        uom: PropTypes.string,
-        currency: PropTypes.string
-    }),
-    title: PropTypes.string,
-    image: PropTypes.string
-
-}
 
 export default GridProduct;
