@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1615654660351" clover="3.2.0">
-  <project timestamp="1615654660351" name="All files">
+<coverage generated="1615657219702" clover="3.2.0">
+  <project timestamp="1615657219703" name="All files">
     <metrics statements="15" coveredstatements="15" conditionals="5" coveredconditionals="5" methods="7" coveredmethods="7" elements="27" coveredelements="27" complexity="0" loc="15" ncloc="15" packages="3" files="3" classes="3"/>
     <package name="api">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="productGrid.js" path="/Users/greg/Documents/dev/JLP-Dishwasher-App/src/api/productGrid.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
       </file>
     </package>
