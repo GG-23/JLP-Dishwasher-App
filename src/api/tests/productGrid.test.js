@@ -14,7 +14,7 @@ describe( 'product grid api' , () => {
 
         expect(axios.get).toHaveBeenCalled();   
         expect(axios.get).toHaveBeenCalledWith('/search/api/rest/v2/catalog/products/search/keyword?q=dishwasher&key=AIzaSyDD_6O5gUgC4tRW5f9kxC0_76XRC8W7_mI');          
-        expect(productGrid).toEqual(mockedData.products);
+        expect(productGrid).toEqual(mockedData.data.products);
     })
 
 
