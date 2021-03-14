@@ -16,6 +16,7 @@ For the purposes of this test, I am assuming that:
  * The app should work in all popular of browsers.
  * API calls should be mocked for faster testing and to avoid any potential issues with the backend. 
  * If a product does not have an id, title or price, it should not be shown.
+ * Features key in the ProductPage API refers to Details > Features.
 
  ### Notes
 

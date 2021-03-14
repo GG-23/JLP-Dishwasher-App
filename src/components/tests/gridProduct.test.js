@@ -84,10 +84,8 @@ describe('GridProduct', () => {
             image: 'http://animageofadishwasher.png/'
         };
         
-        const wrapper = render(<BrowserRouter><GridProduct {...product} /></BrowserRouter>);
-        
+        const wrapper = render(<BrowserRouter><GridProduct {...product} /></BrowserRouter>);        
         expect( wrapper.container.firstChild ).toHaveAttribute('href', '/product/1234');
-
     });
     
 

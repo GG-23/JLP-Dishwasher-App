@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1615740884486" clover="3.2.0">
-  <project timestamp="1615740884486" name="All files">
-    <metrics statements="15" coveredstatements="15" conditionals="5" coveredconditionals="5" methods="7" coveredmethods="7" elements="27" coveredelements="27" complexity="0" loc="15" ncloc="15" packages="3" files="3" classes="3"/>
+<coverage generated="1615744254136" clover="3.2.0">
+  <project timestamp="1615744254137" name="All files">
+    <metrics statements="21" coveredstatements="21" conditionals="7" coveredconditionals="7" methods="10" coveredmethods="10" elements="38" coveredelements="38" complexity="0" loc="21" ncloc="21" packages="3" files="4" classes="4"/>
     <package name="api">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6"/>
+      <file name="productDetails.js" path="/Users/greg/Documents/dev/JLP-Dishwasher-App/src/api/productDetails.js">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
       <file name="productGrid.js" path="/Users/greg/Documents/dev/JLP-Dishwasher-App/src/api/productGrid.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="3" count="2" type="stmt"/>
