@@ -27,9 +27,14 @@ module.exports = {
     contentBase: path.join(__dirname, "public/"),
     port: 8000,
     publicPath: "http://localhost:8000/dist/",
+    historyApiFallback: true,
     hot: true,
     proxy: {
       '/search': {
+        target: 'https://api.johnlewis.com',
+        changeOrigin: true
+      },
+      '/mobile-apps': {
         target: 'https://api.johnlewis.com',
         changeOrigin: true
       },

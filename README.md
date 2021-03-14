@@ -13,10 +13,12 @@ For the purposes of this test, I am assuming that:
 
  * The stack I should be using includes JS(ES6+), React and SASS as per the job specification.
  * Creating the app from scratch is preferred to using Create React App or similar. 
- * The app should work in a variety of browsers.
+ * The app should work in all popular of browsers.
  * API calls should be mocked for faster testing and to avoid any potential issues with the backend. 
- * If a product does not have a title or a price, it should not be shown.
+ * If a product does not have an id, title or price, it should not be shown.
 
  ### Notes
 
  * Axios has been used for API requests in order to provide backwards compatibility. 
+ * Testing is carried out with react-testing-library.
+ 

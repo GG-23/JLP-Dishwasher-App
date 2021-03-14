@@ -2,12 +2,14 @@
     background-color: $background;
     border-bottom: 1px solid $border;
     border-right: 1px solid $border;
+    color: inherit;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 12px 44px 44px;
+    text-decoration: none;
     width: 25%;
-
+    
     img {
         align-self: center;
         height: auto;

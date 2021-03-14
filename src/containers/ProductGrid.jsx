@@ -2,7 +2,7 @@ import React, {useState, useEffect, Fragment}  from 'react';
 import { getProductGrid } from '../api/productGrid';
 import GridProduct from '../components/GridProduct';
 
-const ProductGrid = ({}) => {
+const ProductGrid = () => {
 
     const [products, setProducts] = useState([]);
 

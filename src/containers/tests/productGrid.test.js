@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { render, act } from '@testing-library/react'
 import '@testing-library/jest-dom';
 
@@ -47,7 +48,7 @@ describe('ProductGrid', () => {
 
         let wrapper;
         await act(async () => {
-           wrapper = render(<ProductGrid />);
+           wrapper = render(<BrowserRouter><ProductGrid /></BrowserRouter>);
         })        
         expect( wrapper.container.firstChild ).not.toBeEmptyDOMElement();
         expect( wrapper.container.getElementsByClassName('product').length ).toBe(2);

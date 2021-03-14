@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -17,7 +18,7 @@ describe('GridProduct', () => {
             image: 'http://animageofadishwasher.png/'
         };        
 
-        const wrapper = render(<GridProduct {...product} />);
+        const wrapper = render(<BrowserRouter><GridProduct {...product} /></BrowserRouter>);
         expect( wrapper.container.firstChild ).toBeNull();
     });
 
@@ -31,7 +32,7 @@ describe('GridProduct', () => {
             image: 'http://animageofadishwasher.png/'
         };        
 
-        const wrapper = render(<GridProduct {...product} />);
+        const wrapper = render(<BrowserRouter><GridProduct {...product} /></BrowserRouter>);
         expect( wrapper.container.firstChild ).toBeNull();
     });
 
@@ -43,7 +44,7 @@ describe('GridProduct', () => {
             image: 'http://animageofadishwasher.png/'
         };  
 
-        const wrapper = render(<GridProduct  {...product}/>);
+        const wrapper = render(<BrowserRouter><GridProduct {...product} /></BrowserRouter>);
         expect( wrapper.container.firstChild ).toBeNull();
     });
     
@@ -59,7 +60,7 @@ describe('GridProduct', () => {
             image: 'http://animageofadishwasher.png/'
         };
         
-        const wrapper = render(<GridProduct {...product} />);
+        const wrapper = render(<BrowserRouter><GridProduct {...product} /></BrowserRouter>);
         expect( wrapper.container.firstChild ).toHaveClass('product');
 
         const image = wrapper.getByRole('img');
@@ -71,6 +72,22 @@ describe('GridProduct', () => {
 
         const price = wrapper.getAllByText('£'+product.price.now);
         expect( price ).toHaveLength(1);
+    });
+
+    it('should link to the product page', () => {
+        const product = {
+            productId: '1234',
+            title: 'Test Product',
+            price: {
+                now: '123.00'                
+            },
+            image: 'http://animageofadishwasher.png/'
+        };
+        
+        const wrapper = render(<BrowserRouter><GridProduct {...product} /></BrowserRouter>);
+        
+        expect( wrapper.container.firstChild ).toHaveAttribute('href', '/product/1234');
+
     });
     
 

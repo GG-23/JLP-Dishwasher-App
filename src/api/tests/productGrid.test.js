@@ -32,9 +32,7 @@ describe( 'product grid api' , () => {
 
         axios.get.mockImplementationOnce(() => Promise.resolve(twentyResults));
         const productGridTwentyPassedIn = await getProductGrid();  
-
         expect(productGridTwentyPassedIn).toHaveLength(20);
-
         
         axios.get.mockImplementationOnce(() => Promise.resolve(twentyOneResults));
         const productGridTwentyOnePassedIn = await getProductGrid();            
