@@ -1,0 +1,189 @@
+.productDetails{
+    color: $mainText;
+    display: flex;
+    flex-direction: column;
+
+    .heading {
+        background: white;
+        display: flex;
+        padding: 20px;
+
+        a {
+            color: inherit; 
+            font-size: 28px;
+            margin-right: 40px;
+            text-decoration: none;
+        }
+
+        h1 { 
+            color: $h1;
+            font-size: 22px;
+            margin: 0;
+        }
+    }
+
+    .imageContainer {
+        background: white;
+        border-bottom: 1px solid $border;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 40px 80px 12px;
+        
+
+        .image {
+            height: 400px;
+            max-width: 400px;
+
+            img {       
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 12px;
+            width: 100%;
+
+            .dot {
+                background: $midGrey;
+                border-radius: 50%;
+                height: 8px;
+                margin: 0 6px;
+                width: 8px;                
+
+                &.active {
+                    background: black;
+                }
+            }
+        }
+    }
+
+    .priceContainer {
+        background: white;
+        border-top: 1px solid $border;
+        margin-top: 18px;
+        order: 3;
+        padding: 20px 60px 0;
+
+        > p {
+            margin: 6px 0;
+        }
+
+        .price{
+            color: $price;
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        .specialOffer {
+            color: $specialOfferRed;
+        }
+
+        .additionalServices{
+            color: $additionalServicesGreen;
+        }
+    }
+
+    .detailsContainer {
+        background: white;
+        order: 4;
+        padding: 42px 0 0 60px;
+
+        .productInformation{
+            border-bottom: 1px solid $border;
+            padding: 0 80px 20px 0;
+        }
+
+
+        .productSpecification {
+            padding: 20px 60px 0 0;
+
+            .feature {
+                border-top: 1px solid $border;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .readMore{
+        display: none;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .productDetails {
+        background: white;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .heading {
+            background: $background;
+            width: 100%;
+
+            h1{
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        .imageContainer {
+            border-bottom: 0;
+            border-right: 1px solid $border;
+            width: 65%;
+        }
+
+        .priceContainer {
+            border-top: 0;
+            margin: 0;
+            padding-top: 40px;
+            width: 35%;
+        }
+
+        .detailsContainer{
+            border-right: 1px solid $border;
+            border-top: none;
+            margin: 0;
+            width: 65%;
+        }
+
+        .productInformation{
+            .minimiser {            
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+
+                &.active{
+                    max-height: 200px;
+                    -webkit-line-clamp: 5;                
+                }
+            }
+        }
+
+        .readMore {
+            border-bottom: 1px solid $border;
+            display: flex;
+            font-size: 20px;
+            font-weight: 400;
+            max-height: auto;
+            padding: 12px 60px 12px 0;
+            
+            > div {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            &.open {
+                .chevron{
+                    transform: rotate(-90deg);
+                };
+            }
+        }
+    }
+    
+}

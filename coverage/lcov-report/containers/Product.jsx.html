@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for containers/ProductGrid.jsx</title>
+    <title>Code coverage report for containers/Product.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">containers</a> ProductGrid.jsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">containers</a> Product.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -79,14 +79,15 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -94,39 +95,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, {useState, useEffect}  from 'react';
-import { getProductGrid } from '../api/productGrid';
-import GridProduct from '../components/GridProduct';
+import {  useParams } from 'react-router-dom';
+import { getProductDetails } from '../api/productDetails';
+import ProductDetails from  '../components/ProductDetails';
 &nbsp;
-const ProductGrid = () =&gt; {
+const Product = () =&gt; {
 &nbsp;
-    const [products, setProducts] = useState([]);
+    const [product, setProduct] = useState({});
+    const { id } = useParams();
 &nbsp;
-    useEffect(async () =&gt; {        
-        const products = await getProductGrid();
-        setProducts( products );
-    }, []);     
+    useEffect(async () =&gt; {      
+        const product = await getProductDetails(id);
+        setProduct( product );
+    }, []);        
 &nbsp;
-    return  &lt;div className='productGridPage'&gt;
-                &lt;h1&gt;Dishwashers ({products.length})&lt;/h1&gt;
-                &lt;div className='productGrid'&gt;
-                    {products.map( product =&gt; 
-                        &lt;GridProduct key={product.productId} {...product} /&gt;
-                    )}
-                &lt;/div&gt;
-            &lt;/div&gt;;
+    if ( Object.keys(product).length === 0 ){
+        return null;
+    }    
+        
+    return &lt;div className='productDetailsPage'&gt;&lt;ProductDetails {...product} /&gt;&lt;/div&gt;;
 }
 &nbsp;
-export default ProductGrid;</pre></td></tr></table></pre>
+export default Product;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

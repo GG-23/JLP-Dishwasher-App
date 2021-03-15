@@ -1,12 +1,11 @@
 import React, {useState, useEffect}  from 'react';
-import { Link, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { getProductDetails } from '../api/productDetails';
-import ProductDetails from  '../components/GridProduct';
+import ProductDetails from  '../components/ProductDetails';
 
 const Product = () => {
 
     const [product, setProduct] = useState({});
-    const [currentImage, setCurrentImage] = useState(0);
     const { id } = useParams();
 
     useEffect(async () => {      

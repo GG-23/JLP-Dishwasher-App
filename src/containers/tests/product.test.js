@@ -34,7 +34,24 @@ describe('Product', () => {
         api.getProductDetails = jest.fn().mockImplementation(() => {
             return {
                 productId: 1,
-                title: 'Test Product'
+                title: 'Test Product',
+                additionalServices:{},
+                details:{
+                    features:[{
+                        attributes: [{
+                            name: 'test',
+                            value: 'test value'
+                        }]
+                    }]
+                },
+                price:{
+                    now: '123.00'
+                },
+                media: {
+                    images: {
+                        urls: ['','','']
+                    }
+                }
             };
         });
 
@@ -42,8 +59,9 @@ describe('Product', () => {
         await act( async () => {
             wrapper = render(<MemoryRouter initialEntries={["/product/1"]}><Product /></MemoryRouter>);
         });
-        
+
         expect( wrapper.container.firstChild ).toHaveClass('productDetailsPage');
+        expect( wrapper.container.firstChild.firstChild ).toHaveClass('productDetails');
     });
 
 });

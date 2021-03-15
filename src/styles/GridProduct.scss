@@ -3,13 +3,15 @@
     border-bottom: 1px solid $border;
     border-right: 1px solid $border;
     color: inherit;
+    display: flex;
+    flex-direction: column;
     padding: 12px 20px 44px;
     text-decoration: none;
     width: 25%;
     
     .image {
         display: flex;
-        height: 300px;
+        min-height: 300px;
 
         img {
             align-self: center;
