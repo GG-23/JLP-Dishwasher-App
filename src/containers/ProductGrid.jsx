@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment}  from 'react';
+import React, {useState, useEffect}  from 'react';
 import { getProductGrid } from '../api/productGrid';
 import GridProduct from '../components/GridProduct';
 
@@ -11,14 +11,14 @@ const ProductGrid = () => {
         setProducts( products );
     }, []);     
 
-    return  <Fragment>
+    return  <div className='productGridPage'>
                 <h1>Dishwashers ({products.length})</h1>
                 <div className='productGrid'>
                     {products.map( product => 
                         <GridProduct key={product.productId} {...product} />
                     )}
                 </div>
-            </Fragment>;
+            </div>;
 }
 
 export default ProductGrid;

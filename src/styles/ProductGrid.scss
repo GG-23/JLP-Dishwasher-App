@@ -1,5 +1,18 @@
-.productGrid {
-    display: flex;
-    flex: 1 1 25%;
-    flex-wrap: wrap;
+.productGridPage {
+
+    h1 { 
+        border-bottom: 1px solid $border;
+        color: $h1;
+        margin: 0;
+        padding: 50px 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .productGrid {
+        display: flex;
+        flex: 1 1 25%;
+        flex-wrap: wrap;
+    }
+    
 }

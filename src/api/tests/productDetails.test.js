@@ -13,7 +13,7 @@ describe( 'product details api' , () => {
 
         expect(axios.get).toHaveBeenCalled();   
         expect(axios.get).toHaveBeenCalledWith('/mobile-apps/api/v1/products/3244905');          
-        expect(productDetails).toEqual(mockedData);
+        expect(productDetails).toEqual(mockedData.data);
     });
 
     it( 'returns empty object if endpoint errs', async () => {
